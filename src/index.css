@@ -1,12 +1,74 @@
 :root {
-  --black-color: #333333;
-  --light-gray-color: #ABABAB;
-  color: var(--black-color);
+  /**
+  * base
+  * def: default;
+  * hov: hover;
+  * bg: background-color;
+  * background: background (background-image and etc);
+  * border: border-color
+  */
+  --black: #333333;
+  --light-gray: #ABABAB;
+  --gray: #F8F8F8;
+  --second-gray: #ABABAB;
+  --white: #fff;
+
+  /**
+  * modal: modal-window;
+  */
+  --modal-bg: var(--gray);
+
+  /**
+  * btn: button;
+  */
+
+  /* primary */
+  --btn-primary-background: linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
+  --btn-primary-color: var(--white);
+
+  /* btn-search: button with modify search; */
+  --btn-search-bg: var(--white);
+  --btn-search-color: var(--light-gray);
+  --btn-search-border: var(--gray);
+
+  --btn-search-hov-color: var(--black);
+
+  --btn-search-active-color: var(--btn-hov-color);
+  --btn-search-active-bg: var(--gray);
+
+  /**
+  * fav: favourite;
+  */
+  --fav-title-color: var(--light-gray);
+  --fav-icon-bg: var(--black);
+  --fav-icon-line-bg: var(--white);
+
+  /**
+  * rad: radio;
+  */
+  --rad-btn-def-border: var(--light-gray);
+  --rad-btn-checked-border: var(--black);
+  /* inner bg color */
+  --rad-btn-checked-inner: var(--black);
+
+  /**
+  * form: search-form;
+  */
+
+  --form-input-border: var(--black);
+  --form-input-color: var(--second-gray);
+}
+
+*, 
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: 'Roboto';
+  color: var(--black-color);
 }
 
 .app {

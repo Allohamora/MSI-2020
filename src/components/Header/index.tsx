@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { List } from '../List';
-import "./index.css";
+import './index.css';
+import { Modal } from '../Modal';
 
 interface HeaderProps {
 
@@ -10,6 +10,10 @@ const Header = (props: HeaderProps) => {
 
     const [active, setActive] = useState<boolean>(false);
 
+    const iconCls = ["favourite__icon"];
+
+    if( active ) iconCls.push("favourite__icon_active");
+
     const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
         setActive( !active );
     };
@@ -18,13 +22,15 @@ const Header = (props: HeaderProps) => {
         <div className="header">
             <h1 className="header__title" >MSI 2020</h1>
 
-            <div className={ "favourite" + (active ? " active" : "") } >
-                <button onClick={clickHandler} className="favourite__button" />
-                <span className="favourite__title" >Favourite</span>
+            <div className="favourite" >
+                
+                <button className="favourite__button" onClick={clickHandler} >
+                    <span className={iconCls.join(" ")} />
+                    <span className="favourite__title" >Favourite</span>
+                </button>
+
             </div>
-            {
-                    active && <List modal />
-            }
+            <Modal favourite show={active} />
         </div>
     );
 };

@@ -1,0 +1,48 @@
+.btn {
+    transition: background-color .2s, color .2s;
+    outline: none;
+    border: none;
+}
+
+.btn_primary {
+    padding: 10px 40px;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+
+    border-radius: 10px;
+
+    background: var(--btn-primary-background);
+    color: var(--btn-primary-color);
+}
+
+/**
+* btn_search
+*/
+
+.btn_search:hover {
+    color: var(--btn-search-hov-color);
+}
+
+.btn_search {
+    border: 2px solid var(--btn-search-border);
+    background-color: var(--btn-search-bg);
+    border-radius: 6px;
+    padding: 6px 15px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--btn-search-color);
+
+    margin-right: 10px;
+}
+
+.btn_search.btn_active {
+    background-color: var(--btn-search-active-bg);
+    color: var(--btn-search-active-color);
+}

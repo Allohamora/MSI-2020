@@ -1,0 +1,25 @@
+.search {
+    padding-top: 78px;
+}
+
+.search__title {
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: bold;
+
+    padding: 0;
+    margin: 0;
+}
+
+.search__text {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 44px;
+
+    padding: 0;
+    margin: 0;
+}
+
+.search__form {
+    padding-top: 43px;
+}
