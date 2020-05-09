@@ -1,37 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './index.css';
 
 interface ButtonProps {
     text?: string,
-    children?: React.ReactNode,
-    search?: boolean,
+    onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
+    active?: boolean,
+    selector?: boolean,
 };
 
 const Button = (props: ButtonProps) => {
 
-    const {text, children, search} = props;
-    const [active, setActive] = useState(false);
+    const {text, onClick, active, selector} = props;
 
     const cls = ["btn"];
 
-    if( search ) {
-        cls.push("btn_search");
+    if( selector ) {
+        cls.push("btn_selector");
     } else {
         cls.push("btn_primary");
     }
-    if( active ) cls.push("btn_active");
 
-    const clickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        setActive( !active );
-    }
+
+    if( active ) cls.push("btn_active");
 
     return (
         <button 
             className={cls.join(" ")}
-            onClick={ clickHandler } 
+            onClick={ onClick } 
         >
             { text }
-            { children }
         </button>
     );
 };

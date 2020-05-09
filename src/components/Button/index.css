@@ -18,14 +18,14 @@
 }
 
 /**
-* btn_search
+* btn_selector
 */
 
-.btn_search:hover {
+.btn_selector:hover {
     color: var(--btn-search-hov-color);
 }
 
-.btn_search {
+.btn_selector {
     border: 2px solid var(--btn-search-border);
     background-color: var(--btn-search-bg);
     border-radius: 6px;
@@ -42,7 +42,7 @@
     margin-right: 10px;
 }
 
-.btn_search.btn_active {
+.btn_selector.btn_active {
     background-color: var(--btn-search-active-bg);
     color: var(--btn-search-active-color);
 }
