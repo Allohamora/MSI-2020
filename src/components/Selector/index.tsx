@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '../Button';
-import 'index.css';
+import './index.css';
 
 interface SelectorProps {
     changeHandler: (value: string) => void,
