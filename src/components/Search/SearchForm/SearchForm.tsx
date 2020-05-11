@@ -1,10 +1,9 @@
 import React from 'react';
-import './index.css';
+import './SearchForm.css';
 
-import { Button } from '../Button';
-import { Form } from '../Form';
-import { Radio } from '../Form/Radio';
-import { Selector } from '../Selector';
+import { Form, Radio } from '../../Form';
+import { Selector } from '../../Selector';
+import { Button } from '../../Button';
 
 interface SearchFormProps {
 

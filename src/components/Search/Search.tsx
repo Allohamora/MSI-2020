@@ -1,6 +1,6 @@
 import React from 'react';
-import { SearchForm } from '../SearchForm';
-import './index.css';
+import { SearchForm } from './SearchForm';
+import './Search.css';
 
 interface SearchProps {
 

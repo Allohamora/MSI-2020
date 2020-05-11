@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import './Radio.css';
+
 import { useId } from '../../../hooks/useId';
-import { NameContext } from '..';
-import './index.css';
+import { NameContext } from '../Form';
 
 interface RadioProps {
     text: string,
@@ -13,21 +14,17 @@ const Radio = (props: RadioProps) => {
     const {text, children} = props;
     const {id} = useId("radio");
 
+    const name = useContext(NameContext);
+
     return (
         <label className="radio" htmlFor={id} >
 
-            <NameContext.Consumer>
-                {
-                    name => (
-                            <input 
-                                className="radio__input"
-                                type="radio" 
-                                name={name} 
-                                id={id} 
-                            />
-                    )
-                }
-            </NameContext.Consumer>
+            <input 
+                className="radio__input"
+                type="radio" 
+                name={name} 
+                id={id} 
+            />
 
             <div className="radio__content">
                 
