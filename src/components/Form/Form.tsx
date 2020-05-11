@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import './Form.css';
 
-import { useId } from '../../hooks/useId';
+import { useId } from 'hooks/useId';
 import { Input } from './Input';
 import { Radio } from './Radio';
 

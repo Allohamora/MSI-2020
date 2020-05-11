@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './Radio.css';
 
-import { useId } from '../../../hooks/useId';
+import { useId } from 'hooks/useId';
 import { NameContext } from '../Form';
 
 interface RadioProps {

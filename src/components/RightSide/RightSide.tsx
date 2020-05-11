@@ -1,6 +1,7 @@
 import React from 'react';
-import { Form } from '../Form';
 import './RightSide.css';
+
+import { Form } from 'components/Form';
 
 interface RightSideProps {
     show: boolean,

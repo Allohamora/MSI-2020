@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { RightSide } from '../RightSide';
 import "./Header.css";
+
+import { RightSide } from '../RightSide';
 
 interface HeaderProps {
 
