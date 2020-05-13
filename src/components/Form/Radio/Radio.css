@@ -1,6 +1,10 @@
 .radio {
     display: block;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.radio_margin-bottom {
+    margin-bottom: 20px;
 }
 
 .radio__input {
@@ -28,7 +32,7 @@
 .radio__input:checked ~ .radio__children {
     padding-top: 20px;
     max-height: 160px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 /**

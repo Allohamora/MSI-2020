@@ -1,7 +1,7 @@
 import { jokesReducer, JokesState } from "./reducers/jokesReducer";
 import { combineReducers } from "redux";
 
-export interface rootState {
+export interface RootState {
     jokes: JokesState
 };
 

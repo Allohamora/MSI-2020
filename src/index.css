@@ -87,5 +87,7 @@ body {
 }
 
 .app {
+  position: relative;
   padding: 20px;
+  overflow: hidden;
 }

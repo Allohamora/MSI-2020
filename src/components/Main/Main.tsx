@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./Main.css";
 
 import { Menu } from 'components/Menu';
-import { Search, Results } from 'components/Search';
+import { Search, SearchResults } from 'components/Search';
 
 interface MainProps {
 
@@ -38,7 +38,7 @@ const Main = (props: MainProps) => {
 
             <Search />
 
-            <Results />
+            <SearchResults />
         </div>
     );
 };

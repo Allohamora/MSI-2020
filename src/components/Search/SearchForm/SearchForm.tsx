@@ -5,7 +5,7 @@ import { Form, Radio } from 'components/Form';
 import { Selector } from 'components/Selector';
 import { Button } from 'components/Button';
 import { useSelector, useDispatch } from 'react-redux';
-import { rootState } from 'redux/rootReducer';
+import { RootState } from 'redux/rootReducer';
 import { searchCategories, SearchType, SearchCategory, searchAction, SearchQuery } from 'redux/actions/jokesActions';
 import { Categories } from 'redux/reducers/jokesReducer';
 
@@ -16,7 +16,7 @@ interface SearchFormProps {
 const SearchForm = (props: SearchFormProps) => {
 
     // categories block
-    const categories = useSelector<rootState, Categories>( state => state.jokes.categories );
+    const categories = useSelector<RootState, Categories>( state => state.jokes.categories );
     const dispatch = useDispatch();
 
     useEffect( () => {
@@ -35,6 +35,20 @@ const SearchForm = (props: SearchFormProps) => {
     }
 
     const sendForm = (e: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
+        switch(type){
+            case "CATEGORY":
+                if( !category.trim() ){
+                    // todo Error
+                    return;
+                }
+                break;
+            case "SEARCH":
+                if( !query.trim() ){
+                    // todo Error
+                    return;
+                }
+                break;
+        }
         dispatch( searchAction(type, category, query) );
     }
 
@@ -50,8 +64,14 @@ const SearchForm = (props: SearchFormProps) => {
         setCategory(selector);
     }
 
+    interface RadioBtn {
+        text: string,
+        type: SearchType,
+        children?: React.ReactNode,
+        marginBottom?: boolean
+    }
     // form radio buttons block
-    const radioButtons: { text: string, type: SearchType, children?: React.ReactNode }[] = [
+    const radioButtons: RadioBtn[] = [
         {
             text: "Random",
             type: "RANDOM"
@@ -70,6 +90,7 @@ const SearchForm = (props: SearchFormProps) => {
         {
             text: "Search",
             type: "SEARCH",
+            marginBottom: true,
             children: (<Form.Input 
                             placeholder="Free text search..." 
                             onChange={inputChangeHandler}
@@ -91,6 +112,7 @@ const SearchForm = (props: SearchFormProps) => {
                         text={radio.text} 
                         onChange={createRadioChangeHandler(radio.type)} 
                         checked={ radio.type === type } 
+                        marginBottom={radio.marginBottom}
                     >
                         {
                             radio.children

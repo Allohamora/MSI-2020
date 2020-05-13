@@ -10,17 +10,21 @@ interface RadioProps {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
     children?: React.ReactNode,
     checked?: boolean,
+    marginBottom?: boolean,
 };
 
 const Radio = (props: RadioProps) => {
     
-    const {text, children, onChange, checked} = props;
+    const {text, children, onChange, checked, marginBottom} = props;
     const {id} = useId("radio");
 
     const name = useContext(NameContext);
 
     return (
-        <label className="radio" htmlFor={id} >
+        <label
+            className={"radio" + (marginBottom ? " radio_margin-bottom" : "") }
+            htmlFor={id} 
+        >
 
             <input 
                 onChange={onChange}

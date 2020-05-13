@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
-import { Jokes, Categories } from "redux/reducers/jokesReducer";
-import { JOKES_SET_JOKES, JOKES_SET_CATEGORIES } from "redux/types";
+import { Jokes, Categories, Joke } from "redux/reducers/jokesReducer";
+import { JOKES_SET_JOKES, JOKES_SET_CATEGORIES, JOKES_ADD_FAVOURITE, JOKES_REMOVE_FAVOURITE } from "redux/types";
 import { ChuckNorris } from "services/chuckNorris";
 
 const service = new ChuckNorris();
@@ -27,6 +27,16 @@ export const searchAction = (
             break;
     }
 }
+
+export const addToFavourites = (joke: Joke) => ({
+    type: JOKES_ADD_FAVOURITE,
+    joke
+});
+
+export const removeFromFavourits = (joke: Joke) => ({
+    type: JOKES_REMOVE_FAVOURITE,
+    joke
+});
 
 const searchRandomJoke = async(dispatch: Dispatch) => {
     const joke = await service.searchByRandom();
