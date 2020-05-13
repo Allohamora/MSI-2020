@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import "./Header.css";
+import "./Main.css";
 
-import { RightSide } from '../RightSide';
+import { Menu } from 'components/Menu';
+import { Search, Results } from 'components/Search';
 
-interface HeaderProps {
+interface MainProps {
 
 };
 
-const Header = (props: HeaderProps) => {
+const Main = (props: MainProps) => {
     const [active, setActive] = useState<boolean>(false);
 
     const iconCls = ["favourite__icon"];
@@ -18,7 +19,8 @@ const Header = (props: HeaderProps) => {
     };
 
     return (
-        <>
+        <div className="main">
+
             <div className="header">
                 <h1 className="header__title" >MSI 2020</h1>
 
@@ -31,9 +33,14 @@ const Header = (props: HeaderProps) => {
 
                 </div>
             </div>
-            <RightSide show={active} />
-        </>
+
+            <Menu show={active} />
+
+            <Search />
+
+            <Results />
+        </div>
     );
 };
 
-export { Header };
+export { Main };

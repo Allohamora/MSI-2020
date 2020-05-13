@@ -12,6 +12,7 @@
   --gray: #F8F8F8;
   --second-gray: #ABABAB;
   --white: #fff;
+  --primary: #8EA7FF;
 
   /**
   * modal: modal-window;
@@ -57,6 +58,20 @@
 
   --form-input-border: var(--black);
   --form-input-color: var(--black);
+
+
+  /**
+  * item: searchResults-item;
+  */
+
+  --item-bg: var(--gray);
+  --item-update-color: var(--second-gray);
+
+  --avatar-bg: var(--white);
+
+  --id-color: var(--second-gray);
+  --id-link-color: var(--primary);
+
 }
 
 *, 

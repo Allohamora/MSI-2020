@@ -6,12 +6,15 @@ import { NameContext } from '../Form';
 
 interface RadioProps {
     text: string,
+
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
     children?: React.ReactNode,
+    checked?: boolean,
 };
 
 const Radio = (props: RadioProps) => {
     
-    const {text, children} = props;
+    const {text, children, onChange, checked} = props;
     const {id} = useId("radio");
 
     const name = useContext(NameContext);
@@ -20,10 +23,12 @@ const Radio = (props: RadioProps) => {
         <label className="radio" htmlFor={id} >
 
             <input 
+                onChange={onChange}
                 className="radio__input"
                 type="radio" 
                 name={name} 
                 id={id} 
+                checked={checked}
             />
 
             <div className="radio__content">

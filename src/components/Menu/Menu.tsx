@@ -1,19 +1,19 @@
 import React from 'react';
-import './RightSide.css';
+import './Menu.css';
 
 import { Form } from 'components/Form';
 
-interface RightSideProps {
+interface MenuProps {
     show: boolean,
 };
 
-const RightSide = (props: RightSideProps) => {
+const Menu = (props: MenuProps) => {
 
     const {show} = props;
 
-    const cls = [ "right-side" ];
+    const cls = [ "menu" ];
 
-    if(show) cls.push("right-side_show");
+    if(show) cls.push("menu_show");
 
     return (
         <div className={cls.join(" ")} >
@@ -26,4 +26,4 @@ const RightSide = (props: RightSideProps) => {
     )
 };
 
-export { RightSide };
+export { Menu };

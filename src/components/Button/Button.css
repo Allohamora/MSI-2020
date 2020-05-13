@@ -17,6 +17,14 @@
     color: var(--btn-primary-color);
 }
 
+.btn.btn_hover {
+    color: var(--btn-search-hov-color);
+}
+
+.btn.btn_without-border {
+    border: none;
+}
+
 /**
 * btn_selector
 */
@@ -45,4 +53,8 @@
 .btn_selector.btn_active {
     background-color: var(--btn-search-active-bg);
     color: var(--btn-search-active-color);
+}
+
+.btn_margin-bottom {
+    margin-bottom: 4px;
 }

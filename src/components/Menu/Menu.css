@@ -1,4 +1,4 @@
-.right-side {
+.menu {
     position: fixed;
     left: 0;
     top: 0;
@@ -13,6 +13,6 @@
     transition: transform 1s;
 }
 
-.right-side_show {
+.menu_show {
     transform: translate(0);
 }
