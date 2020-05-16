@@ -22,6 +22,9 @@ const Menu = (props: MenuProps) => {
     return (
         <>
             <div className={cls.join(" ")} >
+                <div className="menu__title">
+                    Favourite
+                </div>
                 <div className="menu__list" >
                     {
                         favourites.map( item => (

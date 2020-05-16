@@ -91,4 +91,15 @@ body {
   position: relative;
   padding: 20px;
   overflow: hidden;
+
+  max-width: 1440px;
+  margin: 0 auto;
+
+  min-height: 100vh;
+}
+
+@media( min-width: 836px ) {
+  .app {
+    padding: 40px;
+  }
 }

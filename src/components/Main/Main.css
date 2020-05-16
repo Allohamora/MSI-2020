@@ -103,3 +103,15 @@
 .favourite__icon_active::before {
     transform: rotate(42deg) translate(-50%, 2px);
 }
+
+@media (min-width: 1440px) {
+    .main {
+        width: 960px;
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+
+    .favourite__button {
+        display: none;
+    }
+}

@@ -6,7 +6,7 @@
     width: 100%;
     z-index: 999;
 
-    padding-top: 40px;
+    padding: 20px;
     background-color: var(--menu-list-bg);
 
     transform: translate(100%);
@@ -37,8 +37,18 @@
     transform: translate(0);
 }
 
+.menu__title {
+    color: var(--light-gray);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+
+    display: none;
+}
+
 .menu__list {
-    padding: 20px;
+    margin-top: 48px;
     --item-bg: var(--white);
     --avatar-bg: var(--gray);
     --btn-search-bg: var(--gray);
@@ -52,5 +62,18 @@
     .menu {
         max-width: 480px;
         margin-left: auto;
+        padding: 40px;
     }
 } 
+
+@media (min-width: 1440px) {
+    .menu {
+        transform: translate(0);
+    }
+    .menu__list {
+        margin-top: 20px;
+    }
+    .menu__title {
+        display: block;
+    }
+}
