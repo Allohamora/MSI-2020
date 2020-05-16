@@ -2,13 +2,12 @@ import React from 'react';
 import './Item.css';
 
 import { Joke } from 'redux/reducers/jokesReducer';
-
-import link from "./link.png"
-import message from "./message.png";
 import { Button } from 'components/Button';
 import { useDispatch } from 'react-redux';
 import { addToFavourites, removeFromFavourits } from 'redux/actions/jokesActions';
 import { Heart } from './Heart';
+import { Id } from './Id';
+import message from "./message.png";
 
 interface ItemProps {
     item: Joke,
@@ -42,9 +41,7 @@ const Item = (props: ItemProps) => {
 
             <div className="item__content">
 
-                <div className="id__wrapper">
-                    ID: <a href={url} className="id">{id} <img src={link} className="id__img" alt="link"/></a>
-                </div>
+                <Id url={url} id={id} />
 
                 <div className="item__text">
                     { value }

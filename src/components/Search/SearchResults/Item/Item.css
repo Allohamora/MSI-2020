@@ -11,6 +11,10 @@
     margin-top: 20px;
 }
 
+.item__content {
+    width: 100%;
+}
+
 .item__text {
     padding-top: 5px;
 
@@ -56,28 +60,8 @@
     margin-right: 20px;
 }
 
-.id__wrapper {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 14px;
-    color: var(--id-color);
-
-    max-height: 14px;
-}
-
-.id {
-    color: var(--id-link-color);
-    text-decoration-color: var(--id-link-color);
-
-    padding-right: 5px;
-    position: relative;
-}
-
-.id__img {
-    position: absolute;
-    right: 0;
-    top: 0;
-
-    transform: translate(100%);
+@media (min-width: 836px) {
+    .item__categories {
+        justify-content: flex-end;
+    }
 }

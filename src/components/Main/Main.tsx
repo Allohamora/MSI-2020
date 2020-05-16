@@ -1,22 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./Main.css";
 
 import { Menu } from 'components/Menu';
 import { Search, SearchResults } from 'components/Search';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'redux/rootReducer';
+import { closeMenu, openMenu } from 'redux/actions/menuActions';
 
 interface MainProps {
 
 };
 
 const Main = (props: MainProps) => {
-    const [active, setActive] = useState<boolean>(false);
+    const dispatch = useDispatch();
+    const open = useSelector<RootState, boolean>( state => state.menu.open );
 
     const iconCls = ["favourite__icon"];
-    if( active ) iconCls.push("favourite__icon_active");
+    if( open ) iconCls.push("favourite__icon_active");
 
     const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-        setActive( !active );
+        if( open ) {
+            dispatch( closeMenu() );
+        } else {
+            dispatch( openMenu() );
+        }
     };
+
+    const closeHandler = ( e: React.MouseEvent<HTMLDivElement, MouseEvent> ) => {
+        console.log(1);
+        dispatch( closeMenu() );
+    }
 
     return (
         <div className="main">
@@ -34,7 +47,7 @@ const Main = (props: MainProps) => {
                 </div>
             </div>
 
-            <Menu show={active} />
+            <Menu show={open} closeHandler={closeHandler} />
 
             <Search />
 
