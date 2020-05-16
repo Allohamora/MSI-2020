@@ -2,9 +2,9 @@
     position: absolute;
     right: 0;
     top: 0;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
-    z-index: 999;
+    z-index: 100;
 
     padding: 20px;
     background-color: var(--menu-list-bg);
@@ -18,13 +18,13 @@
 }
 
 .menu-bg {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
 
-    z-index: 998;
+    z-index: 99;
     background-color: var(--menu-bg);
 
     transform: translate(100%);
@@ -75,5 +75,8 @@
     }
     .menu__title {
         display: block;
+    }
+    .menu-bg {
+        display: none;
     }
 }

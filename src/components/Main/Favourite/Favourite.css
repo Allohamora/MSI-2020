@@ -1,0 +1,87 @@
+/**
+* favourite
+*/
+
+.favourite {
+    display:  flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+}
+
+.favourite__title {
+    font-weight: 500;
+    color: var(--fav-title-color);
+    font-size: 20px;
+}
+
+/**
+* favourite__button
+*/
+.favourite__button {
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+}
+
+.favourite__icon {    
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-color: var(--fav-icon-bg);
+    border-radius: 50%;
+
+    margin-right: 10px;
+
+
+    position: relative;
+
+    padding: 0;
+    border: none;
+}
+
+.favourite__icon::after, .favourite__icon::before {
+    transition: transform .5s;
+    position: absolute;
+
+    content: "";
+
+    width: 14px;
+    height: 2px;
+    background-color: var(--fav-icon-line-bg);
+    border-radius: 2px;
+}
+
+.favourite__icon::after {
+    top: 10px;
+    transform: translate(-50%);
+}
+
+.favourite__icon::before {
+    top: 16px;
+    transform: translate(-50%);
+}
+
+.favourite__icon_active::after {
+    transform: rotate(-42deg) translate(-50%, -2px);
+}
+
+.favourite__icon_active::before {
+    transform: rotate(42deg) translate(-50%, 2px);
+}
+
+
+@media (min-width: 1440px) {
+    .favourite__button {
+        display: none;
+    }
+}
