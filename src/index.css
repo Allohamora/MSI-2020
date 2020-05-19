@@ -73,6 +73,11 @@
   --id-color: var(--second-gray);
   --id-link-color: var(--primary);
 
+  /**
+  * error: ErrorComponent;
+  */
+  --error-color: #e74c3c;
+
 }
 
 *, 
@@ -86,9 +91,20 @@ body {
   padding: 0;
   font-family: 'Roboto';
   color: var(--black-color);
+}
 
-  /* need for menu */
+/* need for normal mobile menu */
+#root {
   overflow-x: hidden;
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  z-index: 1;
 }
 
 .app {
@@ -100,6 +116,7 @@ body {
 
   /* need for menu */
   overflow-y: visible;
+  min-height: 100vh;
 }
 
 @media( min-width: 836px ) {

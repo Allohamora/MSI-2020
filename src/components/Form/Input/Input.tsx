@@ -1,6 +1,7 @@
 import React from 'react';
 import './Input.css';
 
+
 interface InputProps {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
     placeholder: string,
@@ -12,12 +13,12 @@ const Input = (props: InputProps) => {
     const {onChange, placeholder, value} = props;
 
     return (
-        <input 
-            type="text" 
-            className="form__input" 
-            onChange={onChange}
-            value={value}
-            placeholder={placeholder}
+            <input 
+                type="text" 
+                className="input" 
+                onChange={onChange}
+                value={value}
+                placeholder={placeholder}
         />
     );
 };

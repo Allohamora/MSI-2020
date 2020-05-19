@@ -1,4 +1,4 @@
-.form__input {
+.input {
     width: 100%;
     max-width: 680px;
     height: 42px;
@@ -10,7 +10,7 @@
     line-height: 22px;
     color: var(--form-input-color);
 
-    padding: 10px 0 10px 15px;
+    padding: 10px 15px;
 
     outline: none;
 }

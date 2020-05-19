@@ -26,12 +26,12 @@
 .radio__children {
     max-height: 0;
     overflow: hidden;
-    transition: max-height .2s, padding .2s;
+    transition: max-height .4s, padding .2s;
 }
 
 .radio__input:checked ~ .radio__children {
     padding-top: 20px;
-    max-height: 160px;
+    max-height: 300px;
     margin-bottom: 20px;
 }
 

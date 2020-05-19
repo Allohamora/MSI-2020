@@ -1,0 +1,21 @@
+.error {
+    max-height: 0;
+    opacity: 0;
+    padding-left: 10px;
+
+    position: relative;
+    z-index: -1;
+
+    color: var(--error-color);
+
+    transition: opacity .5s, max-height .5s, padding-bottom .2s;
+}
+
+.error_show {
+    max-height: 40px;
+    opacity: 1;
+}
+
+.error_show.error_padding {
+    padding-bottom: 20px;
+}

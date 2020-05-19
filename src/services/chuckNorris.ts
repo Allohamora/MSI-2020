@@ -10,10 +10,13 @@ interface ChuckJoke {
     value: string
 };
 
-interface ChuckQueryResult {
+type ChuckQueryResult = {
     total: number,
     result: ChuckJoke[],
-}
+
+    error?: string,
+    message?: string,
+};
 
 export class ChuckNorris {   
     public baseUrl: string = "https://api.chucknorris.io/jokes";
@@ -21,6 +24,7 @@ export class ChuckNorris {
     public async searchByQuery(query: string) {
         const response = await fetch(this.baseUrl + `/search?query=${query}`);
         const jokes = await response.json() as ChuckQueryResult;
+
         return jokes;
     }
 

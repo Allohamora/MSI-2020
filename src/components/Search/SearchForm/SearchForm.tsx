@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'redux/rootReducer';
 import { searchCategories, SearchType, SearchCategory, searchAction, SearchQuery } from 'redux/actions/jokesActions';
 import { Categories } from 'redux/reducers/jokesReducer';
+import { ErrorComponent } from 'components/ErrorComponent';
 
 interface SearchFormProps {
 
@@ -37,14 +38,12 @@ const SearchForm = (props: SearchFormProps) => {
     const sendForm = (e: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
         switch(type){
             case "CATEGORY":
-                if( !category.trim() ){
-                    // todo Error
+                if( !category ){
                     return;
                 }
                 break;
             case "SEARCH":
-                if( !query.trim() ){
-                    // todo Error
+                if( query.length > 120 || query.length < 3 ){
                     return;
                 }
                 break;
@@ -80,22 +79,43 @@ const SearchForm = (props: SearchFormProps) => {
             text: "From categories",
             type: "CATEGORY",
             children: categories 
-                        ? (<Selector 
-                            selectors={categories} 
-                            changeHandler={selectorChangeHandler}
-                            reset={ !(type === "CATEGORY") }
-                          />)
+                        ? (
+                            <>
+                                <ErrorComponent 
+                                        text="Select a category" 
+                                        show={ type === "CATEGORY" && category.length === 0 }
+                                        padding
+                                />
+
+                                <Selector 
+                                    selectors={categories} 
+                                    changeHandler={selectorChangeHandler}
+                                    reset={ !(type === "CATEGORY") }
+                                />
+                            </>
+                          )
+
                         : (<div>Loading...</div>)
         },
         {
             text: "Search",
             type: "SEARCH",
             marginBottom: true,
-            children: (<Form.Input 
-                            placeholder="Free text search..." 
-                            onChange={inputChangeHandler}
-                            value={query}
-                       />)
+            children: (
+                        <>
+                            <ErrorComponent 
+                                text="Search input must be > 3 and < 120"
+                                show={ type === "SEARCH" && (query.length < 3 || query.length > 120) }
+                                padding
+                            />
+
+                            <Form.Input 
+                                placeholder="Free text search..." 
+                                onChange={inputChangeHandler}
+                                value={query}
+                            />
+                        </>
+                       )
         }
     ];
 
