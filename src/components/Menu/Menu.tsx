@@ -27,34 +27,38 @@ const Menu = (props: MenuProps) => {
 
     return (
         <div 
-            className={ "menu__wrap" + ( show ? " menu__wrap_show" : "" ) }
+            className="menu__outer"
         >
-            <div className={cls.join(" ")} >
+            <div className="menu__inner">
 
-                <div className="menu__title">
-                    Favourite
+                <div className={cls.join(" ")} >
+
+                    <div className="menu__title">
+                        Favourite
+                    </div>
+
+                    <div className="menu__list" >
+                                    {
+                                        favourites.length 
+                                            ?   favourites.map( item => (
+                                                    <SearchItem key={item.id} item={item} favourite />
+                                                ) )
+
+                                            :   <div className="menu__message" >
+                                                    Favourite list is empty. 
+                                                    Click to { <Heart clear /> } to add. 
+                                                </div>
+                                    }
+                    </div>
+
                 </div>
-
-                <div className="menu__list" >
-                                {
-                                    favourites.length 
-                                        ?   favourites.map( item => (
-                                                <SearchItem key={item.id} item={item} favourite />
-                                            ) )
-
-                                        :   <div className="menu__message" >
-                                                Favourite list is empty. 
-                                                Click to { <Heart clear /> } to add. 
-                                            </div>
-                                }
-                </div>
-
+                
+                <div 
+                    className={"menu-backdrop" + (show ? " menu-backdrop_show" : "")} 
+                    onClick={closeHandler}
+                />
             </div>
-            
-            <div 
-                className={"menu-backdrop" + (show ? " menu-backdrop_show" : "")} 
-                onClick={closeHandler}
-            />
+
         </div>
     )
 };
