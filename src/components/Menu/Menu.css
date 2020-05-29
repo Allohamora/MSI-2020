@@ -1,9 +1,10 @@
 /* menu-backdrop */
 .menu-backdrop {
     position: absolute;
-    z-index: 99;
     left: -100%;
     top: 0;
+
+    z-index: 99;
 
     height: 100%;
     width: 100%;
@@ -25,12 +26,14 @@
 .menu {
     position: relative;
     left: -100%;
+    bottom: 0;
+
     z-index: 100;
 
-    bottom: 0;
     width: 100%;
 
     padding: 20px;
+    
     background-color: var(--menu-list-bg);
 
     transform: translate(100%);
@@ -64,17 +67,19 @@
 }
 
 .menu__title {
-    color: var(--light-gray);
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 28px;
+
+    color: var(--light-gray);
 
     display: none;
 }
 
 .menu__list {
     margin-top: 48px;
+
     --item-bg: var(--white);
     --avatar-bg: var(--gray);
     --btn-search-bg: var(--gray);
@@ -88,6 +93,7 @@
 
     .menu {
         max-width: 480px;
+
         margin-left: auto;
         padding: 40px;
     }

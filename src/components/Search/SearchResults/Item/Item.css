@@ -1,14 +1,13 @@
 .item {
-    display: flex;
-
     position: relative;
 
-    background-color: var(--item-bg);
-    border-radius: 20px;
+    display: flex;
 
     padding: 47px 20px 20px 20px;
-
     margin-top: 20px;
+
+    border-radius: 20px;
+    background-color: var(--item-bg);
 }
 
 .item__content {
@@ -27,33 +26,36 @@
 }
 
 .item__update {
+    padding-top: 28px;
+    
     font-style: normal;
     font-weight: normal;
     font-size: 10px;
     line-height: 14px;
-    color: var(--item-update-color);
 
-    padding-top: 28px;
+    color: var(--item-update-color);
 }
 
 .item__categories {
-    padding-top: 10px;
     display: flex;
+
+    padding-top: 10px;
 }
 
 .avatar {
-    max-width: 40px;
-    min-width: 40px;
-    height: 40px;
-
-    border-radius: 50%;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: var(--avatar-bg);
+    max-width: 40px;
+    min-width: 40px;
+    height: 40px;
+
     margin-right: 20px;
+
+    border-radius: 50%;
+
+    background-color: var(--avatar-bg);
 }
 
 @media (min-width: 836px) {

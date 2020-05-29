@@ -1,10 +1,12 @@
 .error {
+    position: relative;
+
+    z-index: -1;
+
     max-height: 0;
     opacity: 0;
-    padding-left: 10px;
 
-    position: relative;
-    z-index: -1;
+    padding-left: 10px;
 
     color: var(--error-color);
 

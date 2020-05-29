@@ -1,19 +1,21 @@
 .id__wrapper {
+    max-height: 14px;
+
     font-style: normal;
     font-weight: 500;
     font-size: 10px;
     line-height: 14px;
-    color: var(--id-color);
 
-    max-height: 14px;
+    color: var(--id-color);
 }
 
 .id {
-    color: var(--id-link-color);
-    text-decoration-color: var(--id-link-color);
+    position: relative;
 
     padding-right: 5px;
-    position: relative;
+
+    color: var(--id-link-color);
+    text-decoration-color: var(--id-link-color);
 }
 
 .id__img {

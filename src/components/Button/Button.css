@@ -1,8 +1,10 @@
 .btn {
-    transition: background-color .2s, color .2s;
+    display: inline-block;
+
     outline: none;
     border: none;
-    display: inline-block;
+
+    transition: background-color .2s, color .2s;
 }
 
 .btn_primary {
@@ -11,11 +13,12 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 22px;
+    color: var(--btn-primary-color);
 
     border-radius: 10px;
 
     background: var(--btn-primary-background);
-    color: var(--btn-primary-color);
+
 }
 
 .btn.btn_hover {
@@ -35,10 +38,11 @@
 }
 
 .btn_selector {
-    border: 2px solid var(--btn-search-border);
-    background-color: var(--btn-search-bg);
-    border-radius: 6px;
+    margin-right: 10px;
     padding: 6px 15px;
+
+    border: 2px solid var(--btn-search-border);
+    border-radius: 6px;
 
     font-weight: 500;
     font-size: 12px;
@@ -46,13 +50,15 @@
 
     letter-spacing: 2px;
     text-transform: uppercase;
+
     color: var(--btn-search-color);
 
-    margin-right: 10px;
+    background-color: var(--btn-search-bg);
 }
 
 .btn_selector.btn_active {
     background-color: var(--btn-search-active-bg);
+    
     color: var(--btn-search-active-color);
 }
 

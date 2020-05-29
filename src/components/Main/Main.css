@@ -7,11 +7,12 @@
 */
 
 .header {
-    display: flex;
+    position: relative;
 
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+
     min-height: 28px;
 }
 
@@ -26,6 +27,7 @@
 @media (min-width: 1440px) {
     .main {
         width: 960px;
+        
         padding-left: 140px;
         padding-right: 140px;
     }
